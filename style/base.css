@@ -1,0 +1,51 @@
+/* CSS Document */
+/**标签初始化**/
+html,body{height:100%;}
+body,div,p,table,tr,th,td,form,input,textarea,fieldset,blockquote,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,i{margin:0;padding:0;font-family:"微软雅黑 Regular","微软雅黑";}
+body{background-color:#fff;}
+ul,ol,li{list-style:none}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:none;vertical-align:middle;}
+input{vertical-align:middle;-webkit-appearance:none;-webkit-border-radius:0}
+label{vertical-align:middle;display:inline-block;}
+cite,i,em,ins{font-style:normal;}
+a,ins{text-decoration:none}
+a{outline:none;blr:expression(this.onFocus=this.blur()); text-decoration:none; }
+
+/**常用样式定义--定位**/
+.clear{clear:both;height:0;overflow:hidden;display:block}
+.fl{float:left;}
+.fr{float:right;}
+.cb{clear:both}
+.cl{clear:left}
+.cr{clear:right}
+.pr{position:relative}
+.pa{position:absolute}
+.tl{text-align:left}
+.tc{text-align:center}
+.tr{text-align:right}
+.disblock{display:block}
+.hide{display:none}
+.disline{display:inline}
+.disinblock{display:inline-block;}
+.vm{vertical-align:middle}
+.vt{vertical-align:top;}
+.hidden{visibility:hidden}
+.bc{margin-left:auto;margin-right:auto}
+.unl{text-decoration:underline;}
+.no_unl{text-decoration:none;}
+
+/**常用样式定义--字体**/
+.line0{line-height:0;}
+.line2{line-height:2em;}
+.f0{font-size:0;}
+.f12{font-size:12px;}
+.f14{font-size:14px;}
+.f16{font-size:16px;}
+
+/**常用样式定义--界面**/
+.boxsizing{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
+.boxshadow{box-shadow:0 0 5px #888;-moz-box-shadow:0 0 5px #888;-webkit-box-shadow:0 0 5px #888;}
+.disbox{display:box;display:-moz-box;display:-webkit-box;}
+.boxflex{box-flex:1.0;-moz-box-flex:1.0;-webkit-box-flex:1.0;display:block;}
+.bgwhite{background-color:#fff;}
