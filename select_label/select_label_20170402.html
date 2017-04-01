@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .option-box{display:inline-block;position:relative;min-width:88px;max-width:125px;margin-left:12px;}
+            .option-btn{display:block;position:relative;box-sizing:border-box;padding:6px;min-width:82px;height:38px;line-height:1.42857143;max-width:125px;background-color:#11b847;text-align:center;color:#FFF;font-size:16px;}
+            .option-btn>em,.option-btn>i{font-style:normal;}
+            a.option-btn,a.option-btn:hover,a.option-btn:focus{text-decoration:none;}
+            .option-cont{display:inline-block;width:64px;overflow:hidden;text-align:center;vertical-align:middle;}
+            .option-icon{display:inline-block;vertical-align:middle;}
+            .option-list{position:absolute;top:38px;left:0;width:100%;box-sizing:border-box;border:1px solid #11b847;background-color:#FFF;display:none;}
+            .option-list>label{display:block;text-align:center;cursor:pointer;}
+            .option-list>label>input[type="radio"]{display:none;}
+            .option-list>label>input[type="radio"]+span{display:block;width:100%;padding:6px 12px;box-sizing:border-box;}
+            .option-list>label>input[type="radio"]:checked+span{background-color:#11b847;color:#fff;}
+            /* .option-list>label>input[type="radio"]:checked+span{background-color:#11b847;color:#fff;} */
+        </style>
+    </head>
+    <body>
+<!----   自定义两个下拉菜单，点击选择列表选项。内容可拓展     ---->
+<div class="btn">
+    <span id="m1" class="option-box">
+        <a href="javascript:;" class="option-btn" data-up="my1">
+            <em class="option-cont">食品类别</em>
+            <i class="option-icon">▼</i>
+        </a>
+        <div class="option-list" data-list="list-my1">
+            <label for="1"><input type="radio" name="radio" id="1" value="1" /><span>01</span></label>
+            <label for="2"><input type="radio" name="radio" id="2" value="2" /><span>02</span></label>
+            <label for="3"><input type="radio" name="radio" id="3" value="3" /><span>03</span></label>
+            <label for="4"><input type="radio" name="radio" id="4" value="4" /><span>04</span></label>
+            <label for="5"><input type="radio" name="radio" id="5" value="5" /><span>05</span></label>
+        </div>
+    </span>
+    <span id="m2" class="option-box">
+        <a href="javascript:;" class="option-btn" data-up="my2">
+            <em class="option-cont">食品类别</em>
+            <i class="option-icon">▼</i>
+        </a>
+        <div class="option-list" data-list="list-my2">
+            <label for="1"><input type="radio" id="1" value="1" />01</label>
+            <label for="2"><input type="radio" id="2" value="2" />02</label>
+            <label for="3"><input type="radio" id="3" value="3" />03</label>
+            <label for="4"><input type="radio" id="4" value="4" />04</label>
+            <label for="5"><input type="radio" id="5" value="5" />05</label>
+        </div>
+    </span>
+</div>
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+;!(function($){
+    // 获取下拉菜单点击按钮
+    var eventBtn = $('a.option-btn');
+    // 展开下拉选项
+    // function openOptionsList(optionList){
+    //     var optionList = optionList || null;
+    //     if(optionList && optionList.length >0){
+    //         optionList.show();
+    //         optionList = 'open';
+    //     }
+    //     return optionList;
+    // }
+
+    // 关闭下拉选项
+    // function closeOptionsList(optionList){
+    //     var optionList = optionList || null;
+    //     if(optionList && optionList.length >0){
+    //         optionList.hide();
+    //         optionList = 'close';
+    //     }
+    //     return optionList;
+    // }
+
+    // 选中下拉选项
+    function selectedOption(event){
+        event.data.options.selectCont.text(this.innerText);
+        toggleOptonsList(event.data.options);
+        // 阻止冒泡事件
+        //event.stopPropagation();
+        //event.preventDefault();
+    }
+
+
+    // 下拉选项的展开与关闭
+    function toggleOptonsList(options,close){
+        var event = null;
+        if(options && options.data && options.data.optionList){
+            event = options;
+            options = options.data;
+        }
+        //if(options && !options['optionList']){}
+        var optionList = options && options['optionList'] || options,state = null;
+        if(optionList.is(':visible') || close){
+            optionList.hide();
+            optionList.off('click.selected.label','label',selectedOption);
+            $(document).off('click.select.out',toggleOptonsList);
+            state = "close";
+        } else{
+            optionList.show();
+            optionList.on('click.selected.label','label',{options:options},selectedOption);
+            $(document).on('click.select.out',options,toggleOptonsList);
+            state = "open";
+        }
+        if(!!event){
+        // 阻止冒泡事件
+        event.stopPropagation();
+        event.preventDefault();
+
+        }
+        return state;
+    }
+
+    // 添加点击事件
+    eventBtn.on('click.select',function(event){
+        var self = this, 
+            _self = $(self), 
+            labelIden = _self.data('up'), 
+            selectCont = _self.find('em').eq(0);
+            optionList = $('.option-list[data-list="list-' + labelIden + '"]'), 
+            obj = {labelIden:labelIden,selectCont:selectCont,selectBtn:_self,optionList:optionList};
+            $('.option-list').not(optionList).each(function(){
+                    toggleOptonsList($(this),true);
+                });
+            var res = optionList.length > 0 && toggleOptonsList(obj); 
+           
+            //console.info(res)
+        // 阻止冒泡事件
+        event.stopPropagation();
+        event.preventDefault();
+        return false;
+    })
+
+}(jQuery));
+</script>
+    </body>
+</html>
