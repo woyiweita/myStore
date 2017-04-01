@@ -72,10 +72,7 @@
     // 选中下拉选项
     function selectedOption(event){
         event.data.options.selectCont.text(this.innerText);
-        toggleOptonsList(event);
-        // 阻止冒泡事件
-        event.stopPropagation();
-        event.preventDefault();
+        toggleOptonsList(event.data.options);
     }
 
 
