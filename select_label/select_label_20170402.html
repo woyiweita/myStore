@@ -9,12 +9,11 @@
             a.option-btn,a.option-btn:hover,a.option-btn:focus{text-decoration:none;}
             .option-cont{display:inline-block;width:64px;overflow:hidden;text-align:center;vertical-align:middle;}
             .option-icon{display:inline-block;vertical-align:middle;}
-            .option-list{position:absolute;top:38px;left:0;width:100%;box-sizing:border-box;border:1px solid #11b847;background-color:#FFF;display:none;}
+            .option-list{position:absolute;top:38px;left:0;width:100%;box-sizing:border-box;border:1px solid #11b847;background-color:#FFF;display:none;z-index:9999;}
             .option-list>label{display:block;text-align:center;cursor:pointer;}
             .option-list>label>input[type="radio"]{display:none;}
             .option-list>label>input[type="radio"]+span{display:block;width:100%;padding:6px 12px;box-sizing:border-box;}
-            .option-list>label>input[type="radio"]:checked+span{background-color:#11b847;color:#fff;}
-            /* .option-list>label>input[type="radio"]:checked+span{background-color:#11b847;color:#fff;} */
+            .option-list>label>input[type="radio"]:checked+span,.option-list>label:hover>span{background-color:#4ac973;color:#fff;}
         </style>
     </head>
     <body>
@@ -39,11 +38,11 @@
             <i class="option-icon">▼</i>
         </a>
         <div class="option-list" data-list="list-my2">
-            <label for="1"><input type="radio" id="1" value="1" />01</label>
-            <label for="2"><input type="radio" id="2" value="2" />02</label>
-            <label for="3"><input type="radio" id="3" value="3" />03</label>
-            <label for="4"><input type="radio" id="4" value="4" />04</label>
-            <label for="5"><input type="radio" id="5" value="5" />05</label>
+            <label for="1"><input type="radio" name="radio" id="21" value="1" /><span>01</span></label>
+            <label for="2"><input type="radio" name="radio" id="22" value="2" /><span>02</span></label>
+            <label for="3"><input type="radio" name="radio" id="23" value="3" /><span>03</span></label>
+            <label for="4"><input type="radio" name="radio" id="24" value="4" /><span>04</span></label>
+            <label for="5"><input type="radio" name="radio" id="5" value="5" /><span>05</span></label>
         </div>
     </span>
 </div>
