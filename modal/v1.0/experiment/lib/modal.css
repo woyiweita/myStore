@@ -1,0 +1,35 @@
+/* 
+* @Author: CharlesYih
+* @Date:   2017-03-09 17:13:44
+* @Last Modified by:   CharlesYih
+* @Last Modified time: 2017-03-15 13:39:52
+*/
+.modal-mask{position:absolute;top:0;left:0;width:100%;height:100%;z-index:9998;background-color:#000;opacity:0.2;filter:alpha(opacity=20);}
+.modal-box{position:absolute;top:0;left:0;margin:auto;}
+.modal-box.modal-borderd{border:1px solid #999;}
+.modal-box.modal-border-radius{border-radius:4px;}
+.modal-box.modal-box-shadow{box-shadow:0 3px 16px 0 #333;}
+.modal-box.modal-box-shadow>.modal-title{box-shadow:0 0 5px 0 #ddd;}
+.modal-box>.modal-title{height:42px;line-height:42px;background-color:#F8F8F8;padding:0 30px 0 20px;border-bottom: 1px solid #eee;font-size:14px;color:#333;text-overflow:ellipsis;white-space:nowrap;}
+.modal-box>.moadl-content{height:auto;padding:20px;line-height:24px;}
+.modal-box>.modal-footer{padding:0 10px 12px;text-align:right;}
+.btn{display:inline-block;height:28px;line-height:28px;padding:0 12px;font-size:14px;font-weight: normal;text-align: center;white-space: nowrap;color:#333;border:1px solid #eee;background-color:#f1f1f1;vertical-align: middle;cursor: pointer;margin:6px 6px 0;text-decoration:none;}
+.modal-box.modal-border-radius>.modal-footer>.btn{border-radius:4px;}
+.btn.btn-blue{border-color:#269abc;background-color:#31b0d5;color:#fff;}
+.btn.btn-orange{border-color:#eea236;background-color:#f0ad4e;color:#fff;}
+.modal-box>.moadl-colse{position:absolute;top:9px;right:12px;padding:0px;width:24px;height:24px;line-height:24px;font-size:24px;cursor:pointer;text-align:center;}
+
+.modal-box[class*="modal-load"]{right:0;bottom:0;}
+.modal-box>.modal-load{width:100%;height:100%;background-color:transparent;background-position:center center;background-repeat:no-repeat;}
+
+.modal-box.modal-load-box{width:60px;height:24px;z-index:9997;}
+.modal-box.modal-load-box>.modal-load{background-image:url('./images/loading-0.gif');}
+
+.modal-box.modal-load1-box{width:37px;height:37px;z-index:9997;}
+.modal-box.modal-load1-box>.modal-load{background-image:url('./images/loading-1.gif');}
+
+.modal-box.modal-load2-box{width:32px;height:32px;z-index:9997;}
+.modal-box.modal-load2-box>.modal-load{background-image:url('./images/loading-2.gif');}
+
+.modal-box.modal-alert-box{min-width:260px;min-height:120px;background-color:#fff;overflow:hidden;z-index:9999;}
+
