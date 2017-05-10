@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Web Storage</title>
+</head>
+<body>
+    <p>实现数据的存储与读取</p>
+    <p><input type="text" id="myname" placeholder="请输入您的名字" /></p>
+    <p><span id="showData"></span></p>
+<script>
+    ;!function(){
+        var name_input = document.getElementById('myname');
+        var showInputValue = function(){
+
+            var self = this,
+                myname = this.value;
+
+            // // 1.以 LocalStorage 方式存储
+            
+            // if(typeof(Storage) !== 'undefined'){
+            //     localStorage.myname = myname;
+            // }
+
+            // // 2.读取存储的数据
+            // document.getElementById('showData').innerText = localStorage.myname;
+
+            // 同样可以采用 sessionStorage 方式存储
+            if(typeof(Storage) !== 'undefined'){
+                sessionStorage.myName = myname;
+            }
+            document.getElementById('showData').innerText = sessionStorage.myName;
+        }
+
+        //事件委托
+        name_input.addEventListener('change',showInputValue,false);
+    }();
+</script>
+</body>
+</html>
