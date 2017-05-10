@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>null 与 undefined 的区别</title>
+</head>
+<body>
+    <div id="box">
+        <span>测试语句</span>
+    </div>
+    <script>
+    // 1. 如果查找不存在的DOM元素将返回 null 
+    var a1 = document.getElementById('box');
+    var b = document.getElementById('bok');
+    console.info(a1);
+    console.info(b);
+    </script>
+</body>
+</html>
