@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>超出文本使用省略号表示</title>
+    <style>
+        div{width:500px;height:auto;font-size:14px;line-height:1.4;margin:auto;}
+        div>span{color:#f00;}
+        .box1{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        .box2{display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden;}
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <span>显示一行文本:</span>text-overflow属性指定当文本溢出包含它的元素，应该发生什么。text-overflow属性指定当文本溢出包含它的元素，应该发生什么。
+    </div>
+    <!-- 这个方法应用的是 webkit 内核浏览器的私有属性，并不能在其他各个版本的浏览器中得到实现。 -->
+    <div class="box2">
+        <span>显示多行文本:</span>text-overflow属性指定当文本溢出包含它的元素，应该发生什么。text-overflow属性指定当文本溢出包含它的元素，应该发生什么。text-overflow属性指定当文本溢出包含它的元素，应该发生什么。text-overflow属性指定当文本溢出包含它的元素，应该发生什么。
+    </div>
+</body>
+</html>
