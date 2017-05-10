@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>盒子居中显示</title>
+    <style>
+        p{text-align:center;}
+        .box{width:500px;height:300px;margin:0 auto;border:1px solid #333;padding:0;position:relative;}
+        .dom{width:300px;height:200px;position:absolute;top:50%;left:50%;margin-top:-100px;margin-left:-150px;background-color:#ff0;}
+        .dom1{width:300px;height:200px;margin:auto;position:absolute;top:0;right:0;bottom:0;left:0;background-color:#0ff;}
+        .text1{text-align:center;display:table;}
+        .text1>p{display:table-cell;vertical-align:middle;}
+        .dom2{clear:both;float:left;position:relative;left:50%;}
+        .dom2>.content{clear:both;float:left;margin-left:-50%;background-color:#f0f;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="dom text1">
+            <p>1. 在知道盒子宽度高度的情况下居中显示，使文本也居中</p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="dom1 text1"><p>1. 在知道盒子宽度高度的情况下居中显示，使文本也居中</p></div>
+    </div>
+    <div class="box">
+        <div class="dom2">
+            <div class="content">
+                <p>在不知道盒子高度宽度的情况下居中，是文本也居中</p>
+            </div>
+        </div>
+    </div>
+    <p>除了 .dom 以外，其他实例皆存在兼容问题，文本居中仅支持IE8以上版本的浏览器</p>
+</body>
+</html>
