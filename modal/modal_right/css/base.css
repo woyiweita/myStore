@@ -1,0 +1,30 @@
+/*设置默认样式，修改浏览器的默认样式*/
+
+/*只显示一行文本，超出隐藏*/
+.line-hide { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/*定位设置*/
+.posi-rel { position: relative; }
+.posi-abs { position: absolute; }
+
+/*按钮*/
+.btn-my-default { border: 1px solid #ccc; color: #333; }
+.btn-width-extend { padding-left: 2em; padding-right: 2em; }
+
+/*模型*/
+.border-none { border-width: 0; }
+ul, ol { list-style: none; padding-left: 0; }
+
+/*字体*/
+.title-my-primary { color: #3074c1; }
+.fz0-8 { font-size: .8rem; }
+.fz1 { font-size: 1rem; }
+.fz1-2 { font-size: 1.2rem; }
+.fz2 { font-size: 2rem; }
+.fz3 { font-size: 3rem; }
+.fz4 { font-size: 4rem; }
+.ver-middle { vertical-align: middle; }
+.font-icon.primary { color: #3074c1; }
+.font-icon.wine-red { color: #f15c80; }
+.font-icon.gray { color: #c4c4c4; }
+.font-icon.success { color: #6bbebd; }
