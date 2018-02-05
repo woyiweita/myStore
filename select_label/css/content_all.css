@@ -1,0 +1,18 @@
+@import url('base.css');
+
+/*自定义下拉菜单*/
+.my-select-input[readonly],.my-select-input:focus {border:1px solid #3074c1; background:#fff url('../img/icon_pics/my_select_icon.png') no-repeat 98% bottom; cursor: pointer;  }
+.my-select-input[data-toggle="close"] {border-color:#eee; background:#fafafa url('../img/icon_pics/my_select_icon.png') no-repeat 98% 0; cursor: pointer; }
+.my-select-input[data-toggle="close"]+.my-select { display: none; }
+.select-body { overflow-x: hidden; position: absolute; top: 0; z-index: 9999; box-sizing: border-box; border: 1px solid #ddd; border-radius: 3px; padding: 1rem 0.5rem; width: 100%; height: auto; max-height: 12rem; background-color: #fff; }
+.my-select-group { margin-bottom: 0;/*受 bootstrap.css 样式影响*/ }
+.my-option { padding-left: 1.8rem; }
+.my-option>.my-option-label{cursor:pointer;}
+.my-option-label { display: block; margin-bottom: 0;/*受 bootstrap.css 样式影响*/ border-bottom: 1px solid #e5e5e5; padding: 6px 0; color: #333333; }
+.option-checkbox { display: none; }
+.option-icon { display: inline-block; position: relative; width: 1rem; height: 1rem; vertical-align: middle; }
+.option-icon:before { content: " "; display: block; position: absolute; top: 0; left: 0; z-index: 1; border: 1px solid #999999; border-radius: 0.5rem; width: 1rem; height: 1rem; }
+.option-icon:after { content: " "; display: block; border: 0.2rem solid #fff; border-radius: 0.5rem; width: 1rem; height: 1rem; background-color: #c4c4c4; }
+.option-checkbox:checked +.option-icon:before { border-color: #3074c1; }
+.option-checkbox:checked +.option-icon:after { background-color: #3074c1; }
+.my-select-group[data-level="0"]>li>.my-option-label { color: #3074c1; }

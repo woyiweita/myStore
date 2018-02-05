@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/content_all.css">
+</head>
+<body>
+<div class="form-group" style="position: relative;width:320px;">
+     <label>上级栏目</label>
+     <div class="posi-rel" data-type="select-box">
+      <input class="form-control my-select-input" type="text" placeholder="请选择上级栏目" value=""  name="name" readonly data-type="select-input" data-toggle="close" data-value="">
+      <div class="posi-rel my-select" data-option="radio" data-type="select">
+        <div class="select-body">
+          <ul class="list-unstyled my-select-group" data-level="0">
+  <li class="my-option">
+    <label class="my-option-label line-hide">
+      <input class="option-checkbox" name="suibian" type="radio" value="0">
+      <i class="option-icon"></i>
+      <span class="my-option-title">无</span>
+    </label>
+  </li>
+  <li class="my-option">
+    <label class="my-option-label line-hide">
+      <input class="option-checkbox" name="suibian" type="radio" value="1">
+      <i class="option-icon"></i>
+      <span class="my-option-title">大气污染</span>
+    </label>
+    <ul class="list-unstyled my-select-group" data-level="1">
+      <li class="my-option">
+        <label class="my-option-label line-hide">
+          <input class="option-checkbox" name="suibian" type="radio" value="1">
+          <i class="option-icon"></i>
+          <span class="my-option-title">大气污染</span>
+        </label>
+        <ul class="list-unstyled my-select-group" data-level="2">
+          <li class="my-option">
+            <label class="my-option-label line-hide">
+              <input class="option-checkbox" name="suibian" type="radio" value="0">
+              <i class="option-icon"></i>
+              <span class="my-option-title">无</span>
+            </label>
+          </li>
+          <li class="my-option">
+            <label class="my-option-label line-hide">
+              <input class="option-checkbox" name="suibian" type="radio" value="1">
+              <i class="option-icon"></i>
+              <span class="my-option-title">大气污染</span>
+            </label>
+          </li>
+          <li class="my-option">
+            <label class="my-option-label line-hide">
+              <input class="option-checkbox" name="suibian" type="radio" value="2">
+              <i class="option-icon"></i>
+              <span class="my-option-title">水体污染</span>
+            </label>
+          </li>
+                  </ul>
+      </li>
+      <li class="my-option">
+        <label class="my-option-label line-hide">
+          <input class="option-checkbox" name="suibian" type="radio" value="2">
+          <i class="option-icon"></i>
+          <span class="my-option-title">水体污染</span>
+        </label>
+      </li>
+              </ul>
+  </li>
+  <li class="my-option">
+    <label class="my-option-label line-hide">
+      <input class="option-checkbox" name="suibian" type="radio" value="2">
+      <i class="option-icon"></i>
+      <span class="my-option-title">水体污染</span>
+    </label>
+  </li>
+          </ul>
+        </div>
+      </div>
+     </div>
+ </div>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/custom_select.js"></script>
+</body>
+</html>
