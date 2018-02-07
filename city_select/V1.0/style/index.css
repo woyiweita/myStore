@@ -1,0 +1,20 @@
+.form-city-control { cursor: pointer; height:auto;min-height:40px;}
+.city-con { height: 320px; }
+.span-3 { width: 25%; }
+.span-9 { width: 75%; }
+.city-all-box { border: 1px solid #ddd; margin-top: -1px; }
+.province { width: 100%; height: 100%; overflow-y: auto; padding-top: 3px; }
+.province>li { padding: 3px 6px; cursor: pointer; }
+.province>li>i { display: inline-block; width: 16px; height: 16px; position: relative; vertical-align: middle; margin-right: 6px; }
+.province>li>i:before { content: " "; display: block; width: 100%; height: 100%; border: 1px solid #ddd; border-radius: 3px; background-color: #fff; box-sizing: border-box; position: absolute; top: 0; left: 0; z-index: 1; }
+.province>li>i:after { content: "\e013"; font-family: 'Glyphicons Halflings'; display: block; line-height: 16px; font-size: 11px; color: transparent; position: absolute; top: 0; left: 0; z-index: 2; }
+.province>li>i.city-all:before { border-color: #317eeb; }
+.province>li>i.city-all:after { color: #317eeb; }
+.province>li>i.city-part:after { color: #c3c3c3; }
+.pro-title { padding: 8px 12px; background-color: #ddd; font-size: 1.2em; }
+.city { width: 100%; height: 100%; padding-top: 40px; box-sizing: border-box; margin-top: -40px; overflow-y: auto; }
+.city>li, .form-city-control>span { display: inline-block; padding: 2px 3px; margin: 1px 3px; vertical-align: middle; border-radius: 6px; cursor: pointer; }
+.city>li.active, .form-city-control>span { color: #fff; background-color: #6f8cd8; }
+i.dele { font-family: 'Glyphicons Halflings'; display: inline-block; width: 17px; height: 100%; font-style: normal; font-weight: normal; font-size: 1em; vertical-align: middle; }
+i.dele:before { content: "\e014"; }
+i.dele:hover,i.dele:focus,i.dele:active{color:#d44950;}

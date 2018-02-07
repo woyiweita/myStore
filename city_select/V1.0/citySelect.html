@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>城市选择</title>
+	<link rel="stylesheet" href="./dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./style/index.css">
+</head>
+<body>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<form>
+				<div class="form-group">
+					<label>选择地域</label>
+					<div dome-oper="click" id="checkedList" class="form-control form-city-control" dome-status="off">
+					</div>
+					<div id="citybody" class="city-all-box clearfix hide">
+						<div class="span-3 pull-left city-con">
+							<ul id="province" class="province list-unstyled"></ul>
+						</div>
+						<div class="span-9 pull-left city-con">
+							<div id="protitle" class="pro-title text-center"></div>
+							<ul id="city" class="city list-unstyled"></ul>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+<script src="./js/jquery.min.js"></script>
+<script src="./dist/js/bootstrap.min.js"></script>
+<script src="./js/cityChecked.js"></script>
+<script>
+(function($){
+	'use strict'; // 严格模式
+	cityChecked.init();
+}(jQuery));
+</script>
+</body>
+</html>
