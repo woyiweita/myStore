@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/content_all.css">
+</head>
+<body>
+<div class="penal">
+  <div class="penal-body" modal-operate="toggle" prompt-operate="toggle">
+    <button class="btn btn-primary" modal-toggle="open">点击弹出模态框</button>
+    <button class="btn btn-primary ml20" prompt-toggle="open">点击弹出提示框</button>
+  </div>
+</div>
+<!--模态框 START-->
+        <div class="modal-layer mask-layer" modal-operate="toggle">
+      <div class="modal-layer-box">
+        <div class="modal-layer-content">
+          <div class="modal-layer-header">
+            <div class="modal-layer-title col-line line-hide">自定义专题</div>
+          </div>
+          <div class="modal-layer-body">
+                  <form class="panel-form" action="subject_add.do" role="form" id="addSubject" method="POST">
+                       <div class="form-group">
+                           <label>专题名称</label>
+                           <input type="text" placeholder="请输入专题名称" value=""  name="name" class="form-control">
+                       </div>
+                       <div class="tab-content">
+                          <div class="tab-pane active" id="iquick" role="tabpanel">
+                              <div class="form-group">
+                                   <label>监测词</label>
+                                   <input type="text" placeholder="请输入专题名称" value=""  name="name" class="form-control">             
+                               </div>
+                               <div class="form-group">
+                                   <label>排除词</label>
+                                   <input type="text" placeholder="请输入专题名称" value=""  name="name" class="form-control">
+                               </div>
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="ihigh">
+                              <div class="form-group">
+                                   <label>监测词组</label>
+                                   <div class="form-group-child">
+                                     <div class="form-group">
+                                         <label>*监测对象</label>
+                                         <input type="text" placeholder="请输入专题名称" value=""  name="name" class="form-control">                       
+                                     </div>
+                                     <div class="form-group">
+                                         <label>关联词</label>
+                                         <input type="text" placeholder="请输入专题名称" value=""  name="name" class="form-control">
+                                     </div>
+                                     <div class="form-group">
+                                      <label>监测词组预览</label>                               
+                                        <div class="m-shchen form-control form-text">
+                                        </div>
+                                     </div>
+                                   </div>
+                               </div>
+                               <div class="form-group">
+                                   <label>排除词</label>
+                                   <input type="text" placeholder="请输入专题名称" value=""  name="name" class="form-control">
+                               </div>
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="iexpert">
+                              <div class="form-group">
+                                  <label>监测词组合</label>
+                                  <input type="text" placeholder="请输入专题名称" value=""  name="name" class="form-control">
+                          </div>
+                       </div>
+                        <div class="form-group" style="position: relative;">
+                           <label>限定地域</label>
+                           <input type="text" placeholder="请输入专题名称" value=""  name="name" class="form-control">
+                       </div>
+                        <div class="form-group" style="position: relative;">
+                           <label>条件保存</label>
+                            <label class="radio-inline line-hide">
+                              <input class="option-checkbox" name="shunbian" type="radio" value="2" checked>
+                              <i class="option-icon"></i>
+                              <span class="my-option-title">保存</span>
+                            </label>
+                            <label class="radio-inline line-hide">
+                              <input class="option-checkbox" name="shunbian" type="radio" value="2">
+                              <i class="option-icon"></i>
+                              <span class="my-option-title">不保存</span>
+                            </label>
+                       </div>
+
+                       <div class="form-group clearfix">
+                           <div class="text-center">
+                              <a class="btn btn-my-default btn-width-extend" href="javascript:;" modal-toggle="close">取　消</a>
+                            <a class="btn btn-primary btn-width-extend ml20" href="javascript:;" modal-toggle="close">完　成</a>
+                           </div>  
+                       </div>
+                    </div>
+                  </form>
+          </div>
+        </div>
+      </div>
+          <div style="width:100%;height:100%;" modal-toggle="close"></div>
+        </div>
+    <!--模态框 END-->
+    <!--提示框 START-->
+    <div class="prompt-layer mask-layer text-center" prompt-operate="toggle">
+      <div class="prompt-layer-box">
+        <div class="prompt-layer-body" data-prompt="body">
+          <div class="prompt-info"><i class="pic-icon ver-middle"></i><span class="prompt-content fz2 ver-middle">删除该专题？</span></div><div class="prompt-confirm"><a class="btn-del-cancel btn btn-width-extend btn-my-default" href="javascript:;" prompt-toggle="close">取 消</a><a class="btn-del-confirm btn btn-width-extend btn-primary ml20" href="javascript:;" prompt-toggle="close">确 认</a></div>
+        </div>
+      </div>
+    </div>
+    <!--提示框 END-->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/custom_layer.js"></script>
+<script>
+(function(){
+    var modalLayer = layer.init('.modal-layer','.modal-layer-box');
+  if(modalLayer !== null){
+    // 模态层显示按钮
+    $('[modal-operate="toggle"]').on('click','[modal-toggle="open"]',function(){
+      modalLayer.showModalLayerFn();
+    });
+    // 模态层隐藏
+    $('[modal-operate="toggle"]').on('click','[modal-toggle="close"]',function(){
+      modalLayer.hideModalLayerfn();
+    });
+  }
+
+var promptLayer = prompt.init('.prompt-layer','.prompt-layer-body');
+  if(promptLayer !== null){
+    $('[prompt-operate="toggle"]').on('click','[prompt-toggle="open"]',function(){
+      promptLayer.confirmDelInfofn('确认删除该专题？',function(res){
+        // 接收确认结果
+        res ? promptLayer.promptResfn('专题删除成功！',true) : promptLayer.promptResfn('专题删除失败！',false);
+      });
+    });
+    $('[prompt-operate="toggle"]').on('click','[prompt-toggle="close"]',function(){
+      promptLayer.hidePromptLayerfn();
+    });
+  }
+})();
+</script>
+</body>
+</html>
