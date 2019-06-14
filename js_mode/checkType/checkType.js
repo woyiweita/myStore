@@ -13,8 +13,7 @@ var Type = (function () {
         ((type) => {
             // console.info(type);
             Type['is' + type] = function (value) {
-                return Object.prototype.toString.call(value) === '[object ' +
-                    type + ']'
+                return Object.prototype.toString.call(value) === '[object ' + type + ']'
             }
         })(typeArr[i]);
     }
